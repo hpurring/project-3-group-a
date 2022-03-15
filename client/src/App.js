@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Header from './components/Header';
 import Search from './pages/Search';
-import Profile from "./pages/EditForm";
-import ProfilePage from "./pages/Profile";
+import EditForm from "./pages/EditForm";
+import Profile from "./pages/Profile";
 // import Qrcode from './components/Qrcode;
 // import Contacts from './components/Contacts';
 // import Card from './components/Card;
@@ -30,8 +30,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/profilepage">
-              <ProfilePage />
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/editform">
+              <EditForm />
             </Route>
             {/* Create a route to display a single thought's comments based on its `thoughtId` provided in the URL */}
             <Route exact path="/thoughts/:thoughtId">
