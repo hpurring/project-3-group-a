@@ -3,8 +3,9 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Header from './components/Header';
-// import Search from './pages/Search';
+import Search from './pages/Search';
 import Profile from "./pages/EditForm";
+import ProfilePage from "./pages/Profile";
 // import Qrcode from './components/Qrcode;
 // import Contacts from './components/Contacts';
 // import Card from './components/Card;
@@ -29,8 +30,8 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/profile">
-              <Profile />
+            <Route exact path="/profilepage">
+              <ProfilePage />
             </Route>
             {/* Create a route to display a single thought's comments based on its `thoughtId` provided in the URL */}
             <Route exact path="/thoughts/:thoughtId">
