@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 // import Auth from "../../utils/auth";
 import { storage } from "../../utils/firebase";
 import { ref, getDownloadURL, uploadString } from "firebase/storage";
+import {v4 as uuidv4} from 'uuid';
 
 //export and calling function
 export default function EditForm() {
@@ -24,7 +25,6 @@ export default function EditForm() {
     instagram: "",
   });
   const [selectedImg, setSelectedImg] = useState(null);
-  const [img, setImg] = useState(null);
   //form state targets specific event values
   const handlechange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +37,6 @@ export default function EditForm() {
     const reader = new FileReader();
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
-      setImg(e.target.files[0]);
     }
     reader.onload = (readerEvent) => {
       setSelectedImg(readerEvent.target.result);
@@ -47,7 +46,7 @@ export default function EditForm() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     // use try/catch instead of promises to handle errors
-    const uploadImg = ref(storage, `/image/${img.name}`);
+    const uploadImg = ref(storage, `/image/${uuidv4()}`);
     try {
       await uploadString(uploadImg, selectedImg, "data_url").then(
         async (snapshot) => {
