@@ -5,6 +5,7 @@ import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 import { useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 import { ADD_CONTACT } from "../../utils/mutations";
+import './mycard.css';
 
 const Profile = () => {
   let myContacts = [];
@@ -42,13 +43,12 @@ const Profile = () => {
     return (
       <>
         <center>
-          <button onClick={() => setIsOpen(true)}></button>
+          <button className="qr-btn" onClick={() => setIsOpen(true)}>my QRad</button>
           {isOpen && <Modal setIsOpen={setIsOpen} />}
           <Card data={data.user.cards[0]} />
-          {isOpen && <Modal setIsOpen={setIsOpen} />}
-          {!useParams && (
-            <button className="btn ml-auto" onClick={handleClick}>
-              Add Contact
+          {(id !== myData.me._id && !(myData.me.contacts.find(x => x._id === id))) && (
+            <button className="btn ml-auto" onClick={() => handleClick(data.user)}>
+              add to my contacts
             </button>
           )}
         </center>
