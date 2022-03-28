@@ -43,7 +43,7 @@ function Home() {
 
             <div className="card-img">
               <img
-                alt="delores-photo"
+                alt="delores"
                 src="https://i.pinimg.com/originals/75/3d/54/753d54f1c9137aca6bb000234b6abeb4.jpg"
               />
             </div>

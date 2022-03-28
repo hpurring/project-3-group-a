@@ -16,14 +16,18 @@ const resolvers = {
         .sort({ username: 1 })
         .select("-__v -password")
         .populate("cards")
-        .populate("contacts");
+        .populate({ path: 'contacts', populate: {
+          path: 'cards'
+        }});
     },
 
     user: async (parent, { _id }) => {
       return User.findOne({ _id })
         .select("-__v -password")
         .populate("cards")
-        .populate("contacts");
+        .populate({ path: 'contacts', populate: {
+          path: 'cards'
+        }});
     },
 
     me: async (parent, args, context) => {
@@ -31,7 +35,9 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
           .populate("cards")
-          .populate("contacts");
+          .populate({ path: 'contacts', populate: {
+            path: 'cards'
+          }});
         return userData;
       }
       throw new AuthenticationError("Not logged in");

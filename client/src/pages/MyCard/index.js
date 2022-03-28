@@ -8,22 +8,22 @@ import { ADD_CONTACT } from "../../utils/mutations";
 import './mycard.css';
 
 const Profile = () => {
-  let myContacts = [];
-  let myUsername = "";
+  // let myContacts = [];
+  // let myUsername = "";
   const [addContact] = useMutation(ADD_CONTACT);
   const { data: myData } = useQuery(QUERY_ME);
-  if (myData) {
-    myContacts = myData.me.contacts;
-    myUsername = myData.me.username;
-    console.log(myData);
-  }
+  // if (myData) {
+  //   myContacts = myData.me.contacts;
+  //   myUsername = myData.me.username;
+  //   console.log(myData);
+  // }
 
   const handleClick = async (user) => {
     try {
       await addContact({
         variables: { _id: user._id },
       });
-      myContacts = myData.me.contacts;
+      // myContacts = myData.me.contacts;
       window.location.assign("/contacts");
     } catch (e) {
       console.log(e);
@@ -36,10 +36,12 @@ const Profile = () => {
     variables: { _id: id },
   });
 
-  if (loading) {
+  if (loading || !myData) {
     return <h4>Loading...</h4>;
   }
-  if (data) {
+
+    console.log(data);
+    console.log(myData);
     return (
       <>
         <center>
@@ -47,14 +49,14 @@ const Profile = () => {
           {isOpen && <Modal setIsOpen={setIsOpen} />}
           <Card data={data.user.cards[0]} />
           {(id !== myData.me._id && !(myData.me.contacts.find(x => x._id === id))) && (
-            <button className="btn ml-auto" onClick={() => handleClick(data.user)}>
+            <button className="qr-btn" onClick={() => handleClick(data.user)}>
               add to my contacts
             </button>
           )}
         </center>
       </>
     );
-  }
+  
 };
 
 export default Profile;
