@@ -34,43 +34,44 @@ const Card = ({ data }) => {
         <ul>
           {data.company && (
             <li>
-              <IoIosBusiness />
+              <IoIosBusiness className="icon"/>
               {data.company}
             </li>
           )}
           {data.title && (
             <li>
-              <MdOutlineBusinessCenter />
+              <MdOutlineBusinessCenter className="icon"/>
               {data.title}
             </li>
           )}
 
           {data.email && (
             <li>
-              <HiOutlineMailOpen /> {data.email}
+              <HiOutlineMailOpen className="icon"/> 
+              {data.email}
             </li>
           )}
           {data.phone && (
             <li>
-              <BsFillTelephoneForwardFill />
+              <BsFillTelephoneForwardFill className="icon"/>
               {data.phone}
             </li>
           )}
           {data.website && (
             <li>
-              <CgWebsite />
+              <CgWebsite className="icon"/>
               <a href={data.website}> {data.website}</a>
             </li>
           )}
           {data.linkedIn && (
             <li>
-              <AiOutlineLinkedin />
-              {data.linkedIn}
+              <AiOutlineLinkedin className="icon"/>
+              <a href={data.linkedIn}> {data.linkedIn}</a>
             </li>
           )}
           {data.instagram && (
             <li>
-              <AiFillInstagram />
+              <AiFillInstagram className="icon"/>
               {data.instagram}
             </li>
           )}

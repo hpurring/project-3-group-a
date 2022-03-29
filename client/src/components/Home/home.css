@@ -1,7 +1,8 @@
 
 
-.homeContainer {
+.homepage {
     background-color: var(--first-color);
+    padding-bottom: 5%;
 }
 
 .homeText {
@@ -23,4 +24,5 @@
     color: var(--second-color);
     font-size: 24px;
     text-align: center;
+    padding-bottom: 5%;
 }

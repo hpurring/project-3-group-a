@@ -192,7 +192,7 @@ export default function EditForm() {
         )}
       </form>
       <button onClick={handleFormSubmit} className="save-btn">
-        Save Edits
+        save
       </button>
     </div>
   );
