@@ -51,12 +51,13 @@ const LoginForm = () => {
         onSubmit={handleFormSubmit}
       >
         <Alert
-          dismissible
+          className="alert"
           onClose={() => setShowAlert(false)}
           show={showAlert}
           variant="danger"
+          dismissible
         >
-          Something went wrong with your login credentials!
+          Oh no! Something went wrong with your login credentials!
         </Alert>
         <p className="form-title">Login to your Qrad account</p>
         <Form.Group className="form-group">
@@ -94,7 +95,7 @@ const LoginForm = () => {
         >
           Submit
         </Button>
-        {error && <h1>Login is Invalid!</h1>}
+        {/* {error && <h1 className="alert">Login is Invalid!</h1>} */}
       </Form>
     </>
   );

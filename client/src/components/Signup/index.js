@@ -70,7 +70,7 @@ const Signup = (props) => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your signup!
+          Oh no! Something went wrong with your signup. Please try again!
         </Alert>
         <p className="form-title">
           {/* missing picture of the business card */}
@@ -131,7 +131,7 @@ const Signup = (props) => {
         >
           Submit
         </Button>
-        {error && <h1>Invalid Information!</h1>}
+        {/* {error && <h1>Invalid Information!</h1>} */}
       </Form>
     </>
   );

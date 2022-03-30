@@ -32,3 +32,8 @@
   margin-top: 20px;
   color: var(--second-color);
 }
+
+.alert {
+  font-family: "Righteous", cursive;
+  color: var(--third-color);
+}
