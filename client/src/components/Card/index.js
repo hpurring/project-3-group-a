@@ -20,7 +20,7 @@ const Card = ({ data }) => {
     <>
       <div className="card">
         <div className="intro">
-          <h4>
+          <h4 className="firstname-lastname">
             {data.firstName} {data.lastName}
           </h4>
           {data.pronouns && <p className="pronouns">({data.pronouns})</p>}

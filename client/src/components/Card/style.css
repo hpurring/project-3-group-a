@@ -17,6 +17,12 @@ img {
     border-radius: 5vh;
     margin: 5vh;
     padding: 2vh;
+    font-family: "Lato", sans-serif;
+    font-weight: lighter;
+}
+
+h4 {
+    font-family: "Righteous", cursive;
 }
 
 .intro {

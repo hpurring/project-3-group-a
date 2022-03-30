@@ -9,15 +9,16 @@
 
 #biz-profile {
     font-family: 'Lato', sans-serif;
-    margin-top: 20px;
     background-color: var(--first-color);
     color: var(--second-color);
+    height: auto;
+    padding-top: 15px;
 }
 
 .save-btn {
     color: var(--second-color);
     background-color: var(--third-color);
-    margin-left: 20px;
+    margin-left: 15px;
     font-family: 'Righteous', sans-serif;
     padding: 10px;
     margin-top: 20px;
@@ -32,6 +33,7 @@
 .biz-card {
     font-family: 'Righteous', sans-serif;
     font-size: 24px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
+    margin-left: 15px;
 }

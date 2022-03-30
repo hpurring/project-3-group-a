@@ -50,30 +50,30 @@ function Home() {
 
             <ul>
               <li>
-                <IoIosBusiness />
+                <IoIosBusiness className="icon"/>
                 Good const
               </li>
               <li>
-                <MdOutlineBusinessCenter />
+                <MdOutlineBusinessCenter className="icon"/>
                 Librarian
               </li>
               <li>
-                <HiOutlineMailOpen /> delores@goodco.com
+                <HiOutlineMailOpen className="icon"/>delores@goodco.com
               </li>
               <li>
-                <BsFillTelephoneForwardFill />
+                <BsFillTelephoneForwardFill className="icon"/>
                 (999)999-999
               </li>
               <li>
-                <CgWebsite />
+                <CgWebsite className="icon"/>
                 goodco.com/delores
               </li>
               <li>
-                <AiOutlineLinkedin />
+                <AiOutlineLinkedin className="icon"/>
                 linkedin.com/deloresdeville
               </li>
               <li>
-                <AiFillInstagram />
+                <AiFillInstagram className="icon"/>
                 instagram.com/deloresdeville777
               </li>
             </ul>
